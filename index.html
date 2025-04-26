@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steve | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mediaqueries.css" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+  <nav id="desktop-nav">
+    <div class="logo"><a href="#">Steve <span>Matiki</span></a></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <nav id="hamburger-nav">
+    <div class="logo"><a href="#">Steve <span>Matiki</span></a></div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      </div>
+    </div>
+  </nav>
+
+  <section id="profile" class="fade-in">
+    <div class="section_text">
+      <p class="welcome">WELCOME</p>
+      <p class="section_text_p1">Hello 👋 I'm</p>
+      <h1 class="title">Steve Matiki</h1>
+      <p class="section_text_p2">Fullstack Developer | Problem Solver</p>
+      <p class="section_text_p3">With over 7 years of experience building web and mobile applications, I specialize in creating clean, user-focused digital experiences using Django, React, Flutter, and more.</p>
+      <div class="btn-container">
+        <button class="btn btn-color-2" onclick="window.open('./assets/CV_Steve_Matiki.pdf')">Download CV</button>
+        <button class="btn btn-color-1" onclick="location.href='#contact'">Contact Me</button>
+      </div>
+    </div>
+    <div class="section_pic-container zoom-in">
+      <img src="./assets/myavatar.png" alt="Profile Image" />
+    </div>
+  </section>
+
+  <section id="about" class="fade-in">
+    <p class="about_text_p1">Let me introduce myself</p>
+    <div class="section-container">
+      <div class="section_pic-container">
+        <img src="./assets/aboutme.png" alt="About Me" class="about-pic" />
+      </div>
+      <div class="about-details-container">
+        <h1>About <span>Me</span></h1>
+        <div class="about-container">
+          <div class="details-container">
+            <img src="./assets/experience.png" alt="Experience Icon" class="icon" />
+            <h3>Experience</h3>
+            <p>7+ years building web, mobile apps, and data-driven solutions for businesses across industries.</p>
+          </div>
+          <div class="details-container">
+            <img src="./assets/hobbies.png" alt="Life Icon" class="icon" />
+            <h3>Life</h3>
+            <p>Big dog lover 🐶 | Fiction enthusiast 📚 | Believer in lifelong learning and simple living.</p>
+          </div>
+        </div>
+        <div class="text-container">
+          <p>I'm passionate about solving real-world problems through technology. Whether it's building a courier management system, creating a fantasy league app, or exploring new tech like Firebase, LangChain, or Streamlit – I love learning and innovating.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="fade-in">
+    <p class="section_title">What I Bring To The Table</p>
+    <h3 class="section_heading">My Skills</h3>
+    <div class="experience_section-container">
+      <div class="technical_skills">
+        <h3>Technical Skills</h3>
+        <div class="skills">
+          <div class="skill_name Django"><h3>Django <span>80%</span></h3><div class="line"></div></div>
+          <div class="skill_name React"><h3>React <span>85%</span></h3><div class="line"></div></div>
+          <div class="skill_name Flutter"><h3>Flutter <span>80%</span></h3><div class="line"></div></div>
+          <div class="skill_name Javascript"><h3>JavaScript <span>75%</span></h3><div class="line"></div></div>
+        </div>
+      </div>
+
+      <div class="professional_skills">
+        <h3>Professional Skills</h3>
+        <div class="boxes">
+          <div class="box"><span>95%</span><span>Collaboration</span></div>
+          <div class="box"><span>85%</span><span>Project Management</span></div>
+          <div class="box"><span>90%</span><span>Creativity</span></div>
+          <div class="box"><span>92%</span><span>Communication</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="fade-in">
+    <h1>Recent <span>Projects</span></h1>
+    <div class="project-container">
+      <div class="project-card">
+        <img src="./assets/courier_project.png" alt="Courier App" />
+        <h3>Courier Management System</h3>
+        <p>A web app for managing package pickups and deliveries, integrated with employee login and payment tracking.</p>
+      </div>
+      <div class="project-card">
+        <img src="./assets/fantasy_tnm.png" alt="Fantasy App" />
+        <h3>Fantasy TNM Super League</h3>
+        <p>A fantasy football mobile app using Flutter and Firebase, focused on clean UI and seamless user experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="fade-in">
+    <h1>Contact <span>Me</span></h1>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn btn-color-1">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Steve Matiki. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="dark-mode-toggle" onclick="toggleDarkMode()">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <script src="scripts.js"></script>
+  <script>
+    function toggleMenu() {
+      const menu = document.querySelector(".menu-links");
+      const icon = document.querySelector(".hamburger-icon");
+      menu.classList.toggle("open");
+      icon.classList.toggle("open");
+    }
+    
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+      const icon = document.querySelector(".dark-mode-toggle i");
+      if (document.body.classList.contains("dark-mode")) {
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+      } else {
+        icon.classList.remove("fa-sun");
+        icon.classList.add("fa-moon");
+      }
+    }
+    
+    // Animation on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll("section").forEach(section => {
+      section.classList.add("hidden");
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
