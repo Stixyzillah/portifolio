@@ -1,9 +1,9 @@
 // Hamburger menu functionality
 function toggleMenu() {
-    const menu = document.querySelector(".menu-links");
-    const icon = document.querySelector(".hamburger-icon");
-    menu.classList.toggle("open");
-    icon.classList.toggle("open");
+  const menu = document.querySelector(".menu-links");
+  const icon = document.querySelector(".hamburger-icon");
+  menu.classList.toggle("open");
+  icon.classList.toggle("open");
 }
 
 // Smooth scrolling for navigation links
@@ -21,13 +21,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Animate on scroll functionality
-const animatedElements = document.querySelectorAll('.fade-in, .zoom-in');
-
 function checkScroll() {
+  const animatedElements = document.querySelectorAll('.fade-in, .zoom-in');
   animatedElements.forEach(el => {
     const elementTop = el.getBoundingClientRect().top;
     const elementVisible = 150;
-    
+
     if (elementTop < window.innerHeight - elementVisible) {
       el.classList.add('active');
     }
@@ -53,14 +52,12 @@ const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    
-    // Basic validation
+
     const name = this.querySelector('input[type="text"]').value;
     const email = this.querySelector('input[type="email"]').value;
     const message = this.querySelector('textarea').value;
-    
+
     if (name && email && message) {
-      // Display success message (in a real implementation, you'd send the form data)
       alert('Thank you for your message! I will get back to you soon.');
       this.reset();
     } else {
@@ -72,32 +69,57 @@ if (contactForm) {
 // Dark mode toggle
 function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
-  
-  // Change icon
   const icon = document.querySelector('.dark-mode-toggle i');
   if (document.body.classList.contains('dark-mode')) {
-    icon.className = 'fas fa-sun';
+    icon.classList.replace('fa-moon', 'fa-sun');
     localStorage.setItem('dark-mode', 'enabled');
   } else {
-    icon.className = 'fas fa-moon';
+    icon.classList.replace('fa-sun', 'fa-moon');
     localStorage.setItem('dark-mode', 'disabled');
   }
 }
 
-// Check for saved dark mode preference
+// On DOM Load
 document.addEventListener('DOMContentLoaded', function() {
+  // Check for saved dark mode preference
   if (localStorage.getItem('dark-mode') === 'enabled') {
     document.body.classList.add('dark-mode');
     const darkModeIcon = document.querySelector('.dark-mode-toggle i');
     if (darkModeIcon) {
-      darkModeIcon.className = 'fas fa-sun';
+      darkModeIcon.classList.replace('fa-moon', 'fa-sun');
     }
   }
-  
+
   // Initialize scroll checks and skill animations
   checkScroll();
   setTimeout(animateSkills, 1000);
+
+  // Animate sections using IntersectionObserver
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('section').forEach(section => {
+    section.classList.add('hidden');
+    observer.observe(section);
+  });
 });
 
-// Initialize scroll event listener
+// Scroll event listener
 window.addEventListener('scroll', checkScroll);
+
+function openPopup(imageName) {
+  const popup = document.getElementById("popup");
+  const popupImage = document.getElementById("popup-image");
+  popupImage.src = `./assets/${imageName}.png`;
+  popup.style.display = "block";
+}
+
+function closePopup() {
+  const popup = document.getElementById("popup");
+  popup.style.display = "none";
+}
